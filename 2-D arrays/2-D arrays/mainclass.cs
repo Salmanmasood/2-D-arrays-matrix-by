@@ -61,6 +61,21 @@ namespace _2_D_arrays
             return arrayselection;
 
         }
+        public int replaceelementinmatrix()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("=====================REPLACEMENT AN ELEMENT IN MATRIX=====================");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n1-Replace Element in MATRIX A:");
+            Console.WriteLine("\n2-Replace Element in MATRIX B:");
+            Console.Write("\nSelect a Number to chose the respective MATRIX: ");
+            int arrayselection = int.Parse(Console.ReadLine());
+
+
+            return arrayselection;
+
+        } //end of method
 
         public void goback()
         {
@@ -68,6 +83,24 @@ namespace _2_D_arrays
             Console.WriteLine("Press any key to go back....");
             Console.ReadKey();
             Console.Clear();
+
+        }
+        public int replaceinterface()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("=====================REPLACEMENT AN ELEMENT IN MATRIX=====================");
+            Console.ForegroundColor = ConsoleColor.White;
+
+
+            Console.WriteLine("\n1-Replace Element By Position:");
+            Console.WriteLine("\n2-Replace By Element :");
+            Console.Write("\nSelect a Number to chose the respective MATRIX: ");
+            int arrayselection = int.Parse(Console.ReadLine());
+
+
+            return arrayselection;
+
+
 
         }
 

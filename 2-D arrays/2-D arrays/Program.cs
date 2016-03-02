@@ -89,13 +89,26 @@ namespace _2_D_arrays
                             ex.invalidinput();
                             goto main;
                         }
+                        break;  //end of case 1.
 
-
-
-
-                        break;
-
-
+                    case 2:
+                        mainclass c2 = new mainclass();
+                       int c2selection=c2.replaceelementinmatrix();
+                       if (c2selection==1)
+                       {
+                           
+                       }
+                       else if (c2selection==2)
+                       {
+                           
+                       }
+                       else
+                       {
+                           mainclass ex = new mainclass();
+                           ex.invalidinput();
+                           goto main;
+                       }
+                       break; //end of case2
 
                     default:
                         break;
