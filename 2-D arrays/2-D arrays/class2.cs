@@ -224,7 +224,7 @@ namespace _2_D_arrays
                 {
                     Console.Write(a[ri, j] + "\t");
                 }
-
+                Console.WriteLine();
 
 
             }
@@ -235,14 +235,14 @@ namespace _2_D_arrays
         {
             Console.Write("Enter the column # that you want to see: ");
             int ri = int.Parse(Console.ReadLine());
-            if (ri > r)
+            if (ri > c)
             {
                 Console.WriteLine("The row {0} doesnot exist....", ri);
             }
             else
             {
 
-                for (int j = 1; j <= c; j++)
+                for (int j = 1; j <= r; j++)
                 {
                     Console.WriteLine(a[j, ri]);
                 }

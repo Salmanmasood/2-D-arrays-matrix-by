@@ -27,14 +27,17 @@ namespace _2_D_arrays
                 Console.WriteLine("\nPress 4 to Display the Matrix");
                 Console.WriteLine("\nPress 5 to Switching  Matrix");
                 Console.WriteLine("\nPress 6 to Find Determinant  of Matrix");
+                Console.WriteLine("\nPress 7 to Find a Slice from Grid");
+                Console.WriteLine("\nPress 8 to Find Determinant  of Matrix");
+
                 
             }
             if (flaga==1 && flagb==1)
             {
-                Console.WriteLine("\nPress 7 to Add Matrices");
-                Console.WriteLine("\nPress 8 to Subtract Matrices");
-                Console.WriteLine("\nPress 9 to Multiply Matrices");
-                Console.WriteLine("\nPress 10 to Find Inverse Matrices");
+                Console.WriteLine("\nPress 9 to Add Matrices");
+                Console.WriteLine("\nPress 10 to Subtract Matrices");
+                Console.WriteLine("\nPress 11 to Multiply Matrices");
+                Console.WriteLine("\nPress 12 to Find Inverse Matrices");
                 
             }
 
@@ -301,7 +304,7 @@ namespace _2_D_arrays
         public int switchingmatrix()
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("=======================SWITCHING ARRAY=======================");
+            Console.WriteLine("=======================SWITCHING MATRIX=======================");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\n1-Switch to matrix A");
             Console.WriteLine("\n2-Switch to matrix B");
@@ -311,7 +314,84 @@ namespace _2_D_arrays
             return sortoption;
         }//end of method.....
 
+        public void showslicesfromgrid(int[,]a,int[,]b,int ra,int ca,int rb,int cb)
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("=======================SHOWING  SLICES FROM GRID=======================");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n1-Showing slice from Grid A");
+            Console.WriteLine("\n2-Showing slice from Grid B");
+            Console.Write("\n select a number to perform the following funtions: ");
+            int sortoption = int.Parse(Console.ReadLine());
 
+            switch (sortoption)
+            {
+
+                case 1:
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("=======================SHOWING  SLICES FROM GRID=======================");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n1-Showing slice by row");
+            Console.WriteLine("\n2-Showing slice by column");
+            Console.Write("\n select a number to perform the following funtions: ");
+            int op = int.Parse(Console.ReadLine());
+            if (op==1)
+            {
+                class2 ob = new class2();
+                ob.displayrowslice(a, ra, ca);
+            }
+                    else if(op==2)
+            {
+                class2 ob = new class2();
+                ob.diplaycolumnslice(a, ra, ca);
+            }
+            else
+            {
+                mainclass ob = new mainclass();
+                ob.invalidinput();
+
+            }
+
+                    break;
+                case 2:
+                
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("=======================SHOWING  SLICES FROM GRID=======================");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n1-Showing slice by row");
+                    Console.WriteLine("\n2-Showing slice by column");
+                    Console.Write("\n select a number to perform the following funtions: ");
+                    int op2 = int.Parse(Console.ReadLine());
+                    if (op2 == 1)
+                    {
+                        class2 ob = new class2();
+                        ob.displayrowslice(b,rb,cb);
+                    }
+                    else if (op2 == 2)
+                    {
+                        class2 ob = new class2();
+                        ob.diplaycolumnslice(b,rb,cb);
+                    }
+                    else
+                    {
+                        mainclass ob = new mainclass();
+                        ob.invalidinput();
+
+                    }
+
+                    break;
+                default:
+                    mainclass ob2= new mainclass();
+                        ob2.invalidinput();
+                    break;
+            }
+
+
+
+
+
+
+        }
 
 
     }

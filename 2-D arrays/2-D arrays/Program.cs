@@ -296,6 +296,10 @@ namespace _2_D_arrays
 
                        break;
 
+                        case 7:
+                       mainclass c7 = new mainclass();
+                       c7.showslicesfromgrid(a, b, rowa, columa, rowb, columb);
+                       break;
                     case 9:
 
                        try
