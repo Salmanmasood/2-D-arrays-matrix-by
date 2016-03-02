@@ -41,7 +41,29 @@ namespace _2_D_arrays
             Console.ReadKey();
             Console.Clear();
         } //exception method
-    
-    
+
+        public int creatematrix()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("============================CREATING A MATRIX============================");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n1-Create MATRIX A:");
+            Console.WriteLine("\n2-Create MATRIX B:");
+            Console.Write("\nSelect a Number to Create the respective MATRIX: ");
+            int arrayselection = int.Parse(Console.ReadLine());
+
+
+            return arrayselection;
+
+        }
+
+
+
+
+
+
+
+
     }
 }
