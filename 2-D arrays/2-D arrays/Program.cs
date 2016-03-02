@@ -165,6 +165,7 @@ namespace _2_D_arrays
 
                                }
 
+                           }
 
                            }
                            else
@@ -178,11 +179,21 @@ namespace _2_D_arrays
                            }
                           
                        
-                           }
+                           
                        
                        break; //end of case2
+                    case 3:
+                        //search element in matrix.
+
+                       mainclass c3 = new mainclass();
+                       c3.searchelement(a, b, rowa, columa, rowb, columb);
+
+
+                       break;
 
                     default:
+                       mainclass d = new mainclass();
+                       d.invalidinput();
                         break;
                 }
 

@@ -25,7 +25,7 @@ namespace _2_D_arrays
                 Console.WriteLine("\nPress 2 to Replace element in Matrix");
                 Console.WriteLine("\nPress 3 to Search element in Matrix");                
                 Console.WriteLine("\nPress 4 to Display the Matrix");
-                Console.WriteLine("\nPress 5 to Switiching  Matrix");
+                Console.WriteLine("\nPress 5 to Switching  Matrix");
                 Console.WriteLine("\nPress 6 to Find Determinant  of Matrix");
                 
             }
@@ -87,6 +87,94 @@ namespace _2_D_arrays
 
         } //end of method
 
+        public void searchelement(int[,] a, int[,] b, int rowa, int colmna, int rowb, int colmnb)
+        { l1:
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("=====================SEARCH AN ELEMENT IN MATRIX=====================");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n1-Search Element in MATRIX A:");
+            Console.WriteLine("\n2-Search Element in MATRIX B:");
+            Console.Write("\nSelect a Number to chose the respective MATRIX: ");
+            int arrayselection = int.Parse(Console.ReadLine());
+            if (arrayselection==1)
+            {
+                mainclass a1 = new mainclass();
+               int x= a1.searchinterface();
+               if (x==1)
+               {
+                   mainclass x1 = new mainclass();
+                   x1.searchingelementmethod(a, rowa, colmna);
+                   
+               }
+               else if (x==2)
+               {
+
+                   mainclass x2 = new mainclass();
+                   x2.searchbyindex(a, rowa, colmna);
+      
+               }
+               else
+               {
+                   mainclass e1 = new mainclass();
+                   e1.invalidinput();
+                   goto l1;
+
+               }
+
+
+            }
+            else if (arrayselection ==2)   
+            {
+                mainclass b1 = new mainclass();
+                int x = b1.searchinterface();
+                if (x == 1)
+                {
+                    mainclass x1 = new mainclass();
+                    x1.searchingelementmethod(b, rowb, colmnb);
+
+                }
+                else if (x == 2)
+                {
+                    mainclass x2 = new mainclass();
+                    x2.searchbyindex(b, rowb, colmnb);
+                }
+                else
+                {
+                    mainclass e1 = new mainclass();
+                    e1.invalidinput();
+                    goto l1;
+
+                }
+
+
+            }
+            else
+            {
+                mainclass ob = new mainclass();
+                ob.invalidinput();
+                goto l1;
+            }
+
+        } //end of method
+
+        public int searchinterface()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("=====================SEARCH AN ELEMENT IN MATRIX=====================");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n1-Search by Element ");
+            Console.WriteLine("\n2-Search by index");
+            Console.Write("\nSelect a Number to chose the respective MATRIX: ");
+            int s = int.Parse(Console.ReadLine());
+            return s;
+
+        }
+
+
+
+
         public void goback()
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -126,6 +214,72 @@ namespace _2_D_arrays
 
 
         }
+
+        public void searchingelementmethod(int[,]a,int row,int col)
+        {
+            Console.WriteLine("Enter the element that you want to search: ");
+            int s = int.Parse(Console.ReadLine());
+            int xi = 0, yi = 0;
+            for (int i = 1; i <= row; i++)
+            {
+                for (int j = 1; j <= col; j++)
+                {
+                    if (a[i, j] == s)
+                    {
+                        xi = i;
+                        yi = j;
+                    }
+
+                }
+
+
+            }
+
+            if (xi==0 && yi==0)
+            {
+                Console.WriteLine("element {0} has not found !!",s);
+            }
+           else
+            {
+                Console.WriteLine("element {0} is found at M[{1},{2}]", s, xi, yi);
+            }
+
+        }
+
+
+        public void searchbyindex(int[,]a,int row,int col)
+        {
+
+
+            Console.Write("\nenter the row#:");
+            int ri = int.Parse(Console.ReadLine());
+            Console.Write("\nenter the column#:");
+            int ci = int.Parse(Console.ReadLine());
+            int temp = -3232323;
+            for (int i = 1; i <= row; i++)
+            {
+                for (int j = 1; j <= col; j++)
+                {
+                    if (i == ri && j == ci)
+                    {
+                        temp = a[i, j];
+                    }
+
+                }
+
+
+            }
+            if (temp == -3232323)
+            {
+                Console.WriteLine("no such index exist....");
+            }
+            else
+            {
+                Console.WriteLine("On M[{0},{1}] index we have elemnt {2}", ri, ci, temp);
+            }
+
+
+        } //end of method.....
 
 
 
