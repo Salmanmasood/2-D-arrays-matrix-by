@@ -14,7 +14,7 @@ namespace _2_D_arrays
 
         static void Main(string[] args)
         {
-            int flaga = 0, flagb = 0, rowa,rowb,columa,columb;
+            int flaga = 0, flagb = 0, rowa = 0, rowb = 0, columa = 0, columb = 0;
             int maininput;
 
             main:
@@ -96,18 +96,89 @@ namespace _2_D_arrays
                        int c2selection=c2.replaceelementinmatrix();
                        if (c2selection==1)
                        {
-                           
-                       }
+
+                           if (a[0,0]==1)
+                           {
+                               mainclass c22 = new mainclass();
+                               int cs = c22.replaceinterface();
+                               if (cs == 1)
+                               {
+                                   matrixoperation ob2 = new matrixoperation();
+                                   ob2.replaceelement(a, rowa, columa);
+
+                               }
+                               else if (cs == 2)
+                               {
+                                   matrixoperation oc = new matrixoperation();
+                                   oc.replacementbyanelement(a, rowa, columa);
+
+                               }
+
+                               else
+                               {
+                                   mainclass ex = new mainclass();
+                                   ex.invalidinput();
+                                   goto main;
+
+                               }
+     
+                           }
+
+                           else
+                           {
+                               Console.ForegroundColor = ConsoleColor.Red;
+                               Console.WriteLine("you have not Created matrix A!!!!");
+                               Console.ForegroundColor = ConsoleColor.White;
+                               Console.WriteLine("press any key to go back......");
+                               Console.ReadKey();
+                               Console.Clear();
+                           }
+
+
+                       } //yhn ha
                        else if (c2selection==2)
                        {
-                           
-                       }
-                       else
-                       {
-                           mainclass ex = new mainclass();
-                           ex.invalidinput();
-                           goto main;
-                       }
+                           if (b[0,0]==1)
+                           {
+                               mainclass c23 = new mainclass();
+                               int cs2 = c23.replaceinterface();
+
+                               if (cs2 == 1)
+                               {
+                                   matrixoperation ob2 = new matrixoperation();
+                                   ob2.replaceelement(b, rowb, columb);
+
+                               }
+                               else if (cs2 == 2)
+                               {
+                                   matrixoperation oc = new matrixoperation();
+                                   oc.replacementbyanelement(b, rowb, columb);
+
+                               }
+
+                               else
+                               {
+                                   mainclass ex = new mainclass();
+                                   ex.invalidinput();
+                                   goto main;
+
+                               }
+
+
+                           }
+                           else
+                           {
+                               Console.ForegroundColor = ConsoleColor.Red;
+                               Console.WriteLine("you have not Created matrix B!!!!");
+                               Console.ForegroundColor = ConsoleColor.White;
+                               Console.WriteLine("press any key to go back......");
+                               Console.ReadKey();
+                               Console.Clear();
+                           }
+                          
+                       
+                           }
+                       
                        break; //end of case2
 
                     default:

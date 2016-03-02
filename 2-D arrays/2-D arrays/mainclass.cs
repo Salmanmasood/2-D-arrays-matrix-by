@@ -92,8 +92,8 @@ namespace _2_D_arrays
             Console.ForegroundColor = ConsoleColor.White;
 
 
-            Console.WriteLine("\n1-Replace Element By Position:");
-            Console.WriteLine("\n2-Replace By Element :");
+            Console.WriteLine("\n1-Replace Element By Position");
+            Console.WriteLine("\n2-Replace By Element ");
             Console.Write("\nSelect a Number to chose the respective MATRIX: ");
             int arrayselection = int.Parse(Console.ReadLine());
 
@@ -104,7 +104,18 @@ namespace _2_D_arrays
 
         }
 
+        public void logicalerror()
+        {
 
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Logical Error!!!!");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("press any key to go back......");
+            Console.ReadKey();
+            Console.Clear();
+
+
+        }
 
 
 

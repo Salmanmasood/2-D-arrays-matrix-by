@@ -76,6 +76,58 @@ namespace _2_D_arrays
             }
 
         }
+        
+
+        public void replaceelement(int[,]a,int row,int col)
+        {
+            l1:
+            Console.Write("\nEnter the row number :");
+            int r = int.Parse(Console.ReadLine());
+            Console.Write("\nEnter the column number :");
+            int c = int.Parse(Console.ReadLine());
+            if (r>row || c>col)
+            {
+                mainclass ob = new mainclass();
+                ob.logicalerror();
+                goto l1;
+            }
+            else
+            {
+
+                Console.Write("\nEnter the element that you want to put on this index M[{0},{1}] ", r, c);
+                int ele = int.Parse(Console.ReadLine());
+                a[r, c] = ele;
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("The element {0} has been replaced successfully on index M[{1},{2}]..",ele,r,c);
+            }
+
+
+        }
+
+        public void replacementbyanelement(int[,] a, int row, int col)
+        {
+            Console.Write("\nEnter the element that you want to Replace: ");
+            int rep = int.Parse(Console.ReadLine());
+            Console.Write("\nEnter the element that you want to put: ");
+            int put = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= row; i++)
+            {
+                for (int j = 1; j <= col; j++)
+                {
+                    if (a[i, j] == rep)
+                    {
+                        a[i, j] = put;
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine("The element {0} has been replaced by {1} successfully..",rep,put);
+                    }
+
+                }
+
+            }
+
+
+        }   //end of method.....
+
 
     }
 }
