@@ -87,7 +87,7 @@ namespace _2_D_arrays
 
         } //end of method
 
-        public void searchelement(int[,] a, int[,] b, int rowa, int colmna, int rowb, int colmnb)
+        public void searchelement(int[,] a, int[,] b, int rowa, int colmna, int rowb, int colmnb,int flaga,int flagb)
         { l1:
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("=====================SEARCH AN ELEMENT IN MATRIX=====================");
@@ -104,14 +104,14 @@ namespace _2_D_arrays
                if (x==1)
                {
                    mainclass x1 = new mainclass();
-                   x1.searchingelementmethod(a, rowa, colmna);
+                   x1.searchingelementmethod(a, rowa, colmna,flaga);
                    
                }
                else if (x==2)
                {
 
                    mainclass x2 = new mainclass();
-                   x2.searchbyindex(a, rowa, colmna);
+                   x2.searchbyindex(a, rowa, colmna,flaga);
       
                }
                else
@@ -131,13 +131,13 @@ namespace _2_D_arrays
                 if (x == 1)
                 {
                     mainclass x1 = new mainclass();
-                    x1.searchingelementmethod(b, rowb, colmnb);
+                    x1.searchingelementmethod(b, rowb, colmnb,flagb);
 
                 }
                 else if (x == 2)
                 {
                     mainclass x2 = new mainclass();
-                    x2.searchbyindex(b, rowb, colmnb);
+                    x2.searchbyindex(b, rowb, colmnb,flagb);
                 }
                 else
                 {
@@ -215,69 +215,87 @@ namespace _2_D_arrays
 
         }
 
-        public void searchingelementmethod(int[,]a,int row,int col)
+        public void searchingelementmethod(int[,]a,int row,int col,int flag)
         {
-            Console.WriteLine("Enter the element that you want to search: ");
-            int s = int.Parse(Console.ReadLine());
-            int xi = 0, yi = 0;
-            for (int i = 1; i <= row; i++)
+            if (flag == 0)
             {
-                for (int j = 1; j <= col; j++)
-                {
-                    if (a[i, j] == s)
-                    {
-                        xi = i;
-                        yi = j;
-                    }
-
-                }
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You not have Created the Matrix ..");
+                Console.ForegroundColor = ConsoleColor.White;
 
 
-            }
-
-            if (xi==0 && yi==0)
-            {
-                Console.WriteLine("element {0} has not found !!",s);
-            }
-           else
-            {
-                Console.WriteLine("element {0} is found at M[{1},{2}]", s, xi, yi);
-            }
-
-        }
-
-
-        public void searchbyindex(int[,]a,int row,int col)
-        {
-
-
-            Console.Write("\nenter the row#:");
-            int ri = int.Parse(Console.ReadLine());
-            Console.Write("\nenter the column#:");
-            int ci = int.Parse(Console.ReadLine());
-            int temp = -3232323;
-            for (int i = 1; i <= row; i++)
-            {
-                for (int j = 1; j <= col; j++)
-                {
-                    if (i == ri && j == ci)
-                    {
-                        temp = a[i, j];
-                    }
-
-                }
-
-
-            }
-            if (temp == -3232323)
-            {
-                Console.WriteLine("no such index exist....");
             }
             else
             {
-                Console.WriteLine("On M[{0},{1}] index we have elemnt {2}", ri, ci, temp);
-            }
+                Console.WriteLine("Enter the element that you want to search: ");
+                int s = int.Parse(Console.ReadLine());
+                int xi = 0, yi = 0;
+                for (int i = 1; i <= row; i++)
+                {
+                    for (int j = 1; j <= col; j++)
+                    {
+                        if (a[i, j] == s)
+                        {
+                            xi = i;
+                            yi = j;
+                        }
 
+                    }
+
+
+                }
+
+                if (xi == 0 && yi == 0)
+                {
+                    Console.WriteLine("element {0} has not found !!", s);
+                }
+                else
+                {
+                    Console.WriteLine("element {0} is found at M[{1},{2}]", s, xi, yi);
+                }
+            }
+        }
+
+
+        public void searchbyindex(int[,]a,int row,int col,int flaga)
+        {
+
+            if (flaga== 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You not have Created the Matrix ..");
+                Console.ForegroundColor = ConsoleColor.White;
+
+            }
+            else
+            {
+                Console.Write("\nenter the row#:");
+                int ri = int.Parse(Console.ReadLine());
+                Console.Write("\nenter the column#:");
+                int ci = int.Parse(Console.ReadLine());
+                int temp = -3232323;
+                for (int i = 1; i <= row; i++)
+                {
+                    for (int j = 1; j <= col; j++)
+                    {
+                        if (i == ri && j == ci)
+                        {
+                            temp = a[i, j];
+                        }
+
+                    }
+
+
+                }
+                if (temp == -3232323)
+                {
+                    Console.WriteLine("no such index exist....");
+                }
+                else
+                {
+                    Console.WriteLine("On M[{0},{1}] index we have elemnt {2}", ri, ci, temp);
+                }
+            }
 
         } //end of method.....
 

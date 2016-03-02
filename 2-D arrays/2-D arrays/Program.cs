@@ -186,10 +186,99 @@ namespace _2_D_arrays
                         //search element in matrix.
 
                        mainclass c3 = new mainclass();
-                       c3.searchelement(a, b, rowa, columa, rowb, columb);
+                       c3.searchelement(a, b, rowa, columa, rowb, columb, a[0, 0], b[0, 0]);
+                       break;//end of case3
 
+                    case 4:
+                         Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("============================Displaying A MATRIX============================");
+            char selectionofmatrix2;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n1-Display MATRIX A:");
+            Console.WriteLine("\n2-Display MATRIX B:");
+            Console.Write("\nSelect a Number to Create the respective MATRIX: ");
+            int dselection = int.Parse(Console.ReadLine());
+            if (dselection==1)
+            {
+                selectionofmatrix2 = 'A';
+                matrixoperation d11 = new matrixoperation();
+                d11.display(a, rowa, columa, selectionofmatrix2);
+            }
+            else if (dselection==2)
+            {
+                selectionofmatrix2 = 'B';
+                matrixoperation d11 = new matrixoperation();
+                d11.display(b, rowb, columb, selectionofmatrix2);
+            }
+            else
+            {
+                mainclass obi = new mainclass();
+                obi.invalidinput();
+
+            }
+                       break;
+                    //end of case4
+                    case 5:
+                       mainclass c5 = new mainclass();
+                       try
+                       {
+                           int c5s = c5.switchingmatrix();
+                           if (c5s == 1)
+                           {
+                               if (flaga == 0)
+                               {
+                                   Console.ForegroundColor = ConsoleColor.Red;
+                                   Console.WriteLine("You Have not created Matrix A yet....");
+                                   Console.ForegroundColor = ConsoleColor.White;
+                               }
+                               else
+                               {
+                                   selectionofmatrix = 'A';
+                                   Console.WriteLine("You have been swtiched to Matrix A");
+
+                               }
+
+
+                           }
+                           else if (c5s == 2)
+                           {
+                               if (flagb == 0)
+                               {
+                                   Console.ForegroundColor = ConsoleColor.Red;
+                                   Console.WriteLine("You Have not created Matrix B yet....");
+                                   Console.ForegroundColor = ConsoleColor.White;
+                               }
+                               else
+                               {
+                                   selectionofmatrix = 'B';
+                                   Console.WriteLine("You have been swtiched to Matrix B");
+
+                               }
+
+                           }
+                           else
+                           {
+
+                               mainclass c5e = new mainclass();
+                               c5e.invalidinput();
+
+                           }
+                       }
+                        catch(Exception)
+                       {
+                           mainclass c5e = new mainclass();
+                           c5e.invalidinput();
+                           goto main;
+                       }
 
                        break;
+
+
+
+
+
+
+
 
                     default:
                        mainclass d = new mainclass();
