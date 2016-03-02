@@ -298,6 +298,18 @@ namespace _2_D_arrays
             }
 
         } //end of method.....
+        public int switchingmatrix()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("=======================SWITCHING ARRAY=======================");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n1-Switch to matrix A");
+            Console.WriteLine("\n2-Switch to matrix B");
+            Console.Write("\n select a number to perform the following funtions: ");
+            int sortoption = int.Parse(Console.ReadLine());
+
+            return sortoption;
+        }//end of method.....
 
 
 

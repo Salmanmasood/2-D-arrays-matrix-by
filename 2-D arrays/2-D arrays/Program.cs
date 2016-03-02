@@ -272,9 +272,48 @@ namespace _2_D_arrays
                        }
 
                        break;
+                    case 6:
+                       try
+                       {
 
 
 
+
+
+
+
+
+
+
+                       }
+
+                       catch (Exception)
+                       {
+                           mainclass c5e = new mainclass();
+                           c5e.invalidinput();
+                           goto main;
+                       }
+
+                       break;
+
+                    case 7:
+
+                       try
+                       {
+                           class2 c7 = new class2();
+                           c7.adddisplay(a, b, c, rowa, columa, rowb, columb);
+
+                       }
+
+                        catch(Exception)
+                       {
+                           mainclass c5e = new mainclass();
+                           c5e.invalidinput();
+                           goto main;
+
+                       }
+
+                       break;
 
 
 
@@ -314,7 +353,7 @@ namespace _2_D_arrays
             
             
             
-            Console.ReadLine();
+            
 
 
         }

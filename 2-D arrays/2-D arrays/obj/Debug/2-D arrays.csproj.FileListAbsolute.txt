@@ -4,9 +4,3 @@ c:\users\salman(al-farsi)\documents\visual studio 2013\Projects\2-D arrays\2-D a
 c:\users\salman(al-farsi)\documents\visual studio 2013\Projects\2-D arrays\2-D arrays\obj\Debug\2-D arrays.csprojResolveAssemblyReference.cache
 c:\users\salman(al-farsi)\documents\visual studio 2013\Projects\2-D arrays\2-D arrays\obj\Debug\2-D arrays.exe
 c:\users\salman(al-farsi)\documents\visual studio 2013\Projects\2-D arrays\2-D arrays\obj\Debug\2-D arrays.pdb
-E:\semester 7\ubit 7th semester\my git folder\2-D-arrays-matrix-by\2-D arrays\2-D arrays\bin\Debug\2-D arrays.exe.config
-E:\semester 7\ubit 7th semester\my git folder\2-D-arrays-matrix-by\2-D arrays\2-D arrays\bin\Debug\2-D arrays.exe
-E:\semester 7\ubit 7th semester\my git folder\2-D-arrays-matrix-by\2-D arrays\2-D arrays\bin\Debug\2-D arrays.pdb
-E:\semester 7\ubit 7th semester\my git folder\2-D-arrays-matrix-by\2-D arrays\2-D arrays\obj\Debug\2-D arrays.exe
-E:\semester 7\ubit 7th semester\my git folder\2-D-arrays-matrix-by\2-D arrays\2-D arrays\obj\Debug\2-D arrays.pdb
-E:\semester 7\ubit 7th semester\my git folder\2-D-arrays-matrix-by\2-D arrays\2-D arrays\obj\Debug\2-D arrays.csprojResolveAssemblyReference.cache
