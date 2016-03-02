@@ -58,7 +58,14 @@ namespace _2_D_arrays
 
         }
 
+        public void goback()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Press any key to go back....");
+            Console.ReadKey();
+            Console.Clear();
 
+        }
 
 
 
