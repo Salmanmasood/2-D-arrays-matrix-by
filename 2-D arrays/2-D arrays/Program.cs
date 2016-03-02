@@ -30,23 +30,58 @@ namespace _2_D_arrays
                         int case1=c1.creatematrix();
                         if (case1==1) //matrix A CREATION
                         {
-                            Console.ForegroundColor = ConsoleColor.Magenta;
-                            Console.WriteLine("============================CREATING AN MATRIX A============================");
-                            Console.ForegroundColor = ConsoleColor.White;
-                            Console.Write("Enter the no. of Rows: ");
-                            rowa = int.Parse(Console.ReadLine());
-                            Console.Write("\nEnter the no. of columns: ");
-                            columa = int.Parse(Console.ReadLine());
-                            matrixoperation matrixa = new matrixoperation();
-                            matrixa.createarray(a, rowa, columa);
-                            matrixoperation M = new matrixoperation();
-                            M.ismatrixsquare(a, rowa, columa);
-                            goto main;
-
+                            if (a[0, 0] == 1)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("You have Created the Matrix A\nYou cannot re-create it again...");
+                                Console.ForegroundColor = ConsoleColor.White;
+                               
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Magenta;
+                                Console.WriteLine("============================CREATING AN MATRIX A============================");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Console.Write("Enter the no. of Rows: ");
+                                rowa = int.Parse(Console.ReadLine());
+                                Console.Write("\nEnter the no. of columns: ");
+                                columa = int.Parse(Console.ReadLine());
+                                matrixoperation matrixa = new matrixoperation();
+                                matrixa.createarray(a, rowa, columa);
+                                flaga = 1;
+                                a[0, 0] = 1; //setting a flag that it will not recreate the matrix.
+                                matrixoperation M = new matrixoperation();
+                                M.ismatrixsquare(a, rowa, columa);
+                                goto main;
+                            }
                         }
                         else if (case1 == 2) //matrix C CREATION
                         {
-                            
+                            if (b[0, 0] == 1)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("You have Created the Matrix B\nYou cannot re-create it again...");
+                                Console.ForegroundColor = ConsoleColor.White;
+
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Magenta;
+                                Console.WriteLine("============================CREATING AN MATRIX A============================");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Console.Write("Enter the no. of Rows: ");
+                                rowb = int.Parse(Console.ReadLine());
+                                Console.Write("\nEnter the no. of columns: ");
+                                columb = int.Parse(Console.ReadLine());
+                                matrixoperation matrixa = new matrixoperation();
+                                matrixa.createarray(b, rowb, columb);
+                                flagb = 1;
+                                b[0, 0] = 1; //setting a flag that it will not recreate the matrix.
+                                matrixoperation M = new matrixoperation();
+                                M.ismatrixsquare(b, rowb, columb);
+                                goto main;
+                            }
+
                         }
                         else //DEFAULT ERROR
                         {
@@ -65,6 +100,12 @@ namespace _2_D_arrays
                     default:
                         break;
                 }
+
+                mainclass last = new mainclass();
+                last.clearscreen();
+                goto main;
+            
+            
             }
             catch(Exception)
             {

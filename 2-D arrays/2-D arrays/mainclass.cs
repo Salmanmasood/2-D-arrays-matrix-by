@@ -8,20 +8,24 @@ namespace _2_D_arrays
 {
     class mainclass
     {
-
-        public void mainmenu(int flag1, int flagb)
+        public void clearscreen()
+        {
+            Console.WriteLine("Press any key to go back.....");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        public void mainmenu(int flaga, int flagb)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("===================================MAIN MENU===================================");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\nPress 1 to Create a Matrix");
-            if (flag1 == 1 || flagb == 1)
+            if (flaga == 1 || flagb == 1)
             {
-                Console.WriteLine("\nPress 2 to Insert element in Matrix");
-                Console.WriteLine("\nPress 3 to Replace element in Matrix");
-                Console.WriteLine("\nPress 5 to Search element in Matrix");                
-                Console.WriteLine("\nPress 7 to Display the Matrix");
-                Console.WriteLine("\nPress 8 to Switiching  Matrix");
+                Console.WriteLine("\nPress 2 to Replace element in Matrix");
+                Console.WriteLine("\nPress 3 to Search element in Matrix");                
+                Console.WriteLine("\nPress 4 to Display the Matrix");
+                Console.WriteLine("\nPress 5 to Switiching  Matrix");
             }
           
             Console.ForegroundColor = ConsoleColor.Magenta;
