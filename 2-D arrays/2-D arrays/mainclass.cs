@@ -26,8 +26,18 @@ namespace _2_D_arrays
                 Console.WriteLine("\nPress 3 to Search element in Matrix");                
                 Console.WriteLine("\nPress 4 to Display the Matrix");
                 Console.WriteLine("\nPress 5 to Switiching  Matrix");
+                Console.WriteLine("\nPress 6 to Find Determinant  of Matrix");
+                
             }
-          
+            if (flaga==1 && flagb==1)
+            {
+                Console.WriteLine("\nPress 7 to Add Matrices");
+                Console.WriteLine("\nPress 8 to Subtract Matrices");
+                Console.WriteLine("\nPress 9 to Multiply Matrices");
+                Console.WriteLine("\nPress 10 to Find Inverse Matrices");
+                
+            }
+
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
             Console.ForegroundColor = ConsoleColor.White;

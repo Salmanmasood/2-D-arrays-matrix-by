@@ -16,7 +16,7 @@ namespace _2_D_arrays
         {
             int flaga = 0, flagb = 0, rowa = 0, rowb = 0, columa = 0, columb = 0;
             int maininput;
-
+            char selectionofmatrix = 'A';
             main:
             mainclass ob = new mainclass();
             try
@@ -51,7 +51,7 @@ namespace _2_D_arrays
                                 flaga = 1;
                                 a[0, 0] = 1; //setting a flag that it will not recreate the matrix.
                                 matrixoperation M = new matrixoperation();
-                                M.ismatrixsquare(a, rowa, columa);
+                                M.ismatrixsquare(a, rowa, columa,selectionofmatrix);
                                 goto main;
                             }
                         }
@@ -77,8 +77,9 @@ namespace _2_D_arrays
                                 matrixa.createarray(b, rowb, columb);
                                 flagb = 1;
                                 b[0, 0] = 1; //setting a flag that it will not recreate the matrix.
+                                selectionofmatrix = 'B';
                                 matrixoperation M = new matrixoperation();
-                                M.ismatrixsquare(b, rowb, columb);
+                                M.ismatrixsquare(b, rowb, columb,selectionofmatrix);
                                 goto main;
                             }
 

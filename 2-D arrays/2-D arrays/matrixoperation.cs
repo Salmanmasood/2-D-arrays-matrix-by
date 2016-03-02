@@ -23,7 +23,7 @@ namespace _2_D_arrays
             return a;
         } //end of method......
     
-        public void ismatrixsquare(int[,]a,int rows,int columns)
+        public void ismatrixsquare(int[,]a,int rows,int columns,char m)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             if (rows==columns)
@@ -43,7 +43,7 @@ namespace _2_D_arrays
             if (d=='d' ||d=='D')
             {
                 matrixoperation displayobj = new matrixoperation();
-                displayobj.display(a, rows, columns);
+                displayobj.display(a, rows, columns,m);
                 mainclass ob = new mainclass();
                 ob.goback();
             }
@@ -62,8 +62,13 @@ namespace _2_D_arrays
             
         }
 
-        public void display(int[,]a,int rows,int columns)
+        public void display(int[,]a,int rows,int columns,char m)
         {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+
+            Console.WriteLine("==========matrix {0}==========", m);
+            Console.ForegroundColor = ConsoleColor.White;
+
             for (int i = 1; i <= rows; i++)
             {
                 for (int j = 1; j <= columns; j++)
