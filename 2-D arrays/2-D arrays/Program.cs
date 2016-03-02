@@ -296,12 +296,12 @@ namespace _2_D_arrays
 
                        break;
 
-                    case 7:
+                    case 9:
 
                        try
                        {
-                           class2 c7 = new class2();
-                           c7.adddisplay(a, b, c, rowa, columa, rowb, columb);
+                           class2 c9 = new class2();
+                           c9.adddisplay(a, b, c, rowa, columa, rowb, columb);
 
                        }
 
@@ -315,9 +315,43 @@ namespace _2_D_arrays
 
                        break;
 
+                    case 10:
+
+                       try
+                       {
+                           class2 c10 = new class2();
+                           c10.adddisplay(a, b, c, rowa, columa, rowb, columb);
+
+                       }
+
+                       catch (Exception)
+                       {
+                           mainclass c5e = new mainclass();
+                           c5e.invalidinput();
+                           goto main;
+
+                       }
+
+                       break;
+
+                    case 11:
+                       try
+                       {
+                           class2 c11 = new class2();
+                           c11.multiplymat(a, b, c, rowa, columa, rowb, columb);
+                       }
+
+                       catch (Exception)
+                       {
+                           mainclass c5e = new mainclass();
+                           c5e.invalidinput();
+                           goto main;
+
+                       }
 
 
 
+                       break;
 
                     default:
                        mainclass d = new mainclass();
