@@ -28,7 +28,7 @@ namespace _2_D_arrays
                 Console.WriteLine("\nPress 5 to Switching  Matrix");
                 Console.WriteLine("\nPress 6 to Find Determinant  of Matrix");
                 Console.WriteLine("\nPress 7 to Find a Slice from Grid");
-                Console.WriteLine("\nPress 8 to Find Determinant  of Matrix");
+                Console.WriteLine("\nPress 8 to Find Transpose of Matrix");
 
                 
             }
@@ -37,7 +37,7 @@ namespace _2_D_arrays
                 Console.WriteLine("\nPress 9 to Add Matrices");
                 Console.WriteLine("\nPress 10 to Subtract Matrices");
                 Console.WriteLine("\nPress 11 to Multiply Matrices");
-                Console.WriteLine("\nPress 12 to Find Inverse Matrices");
+              
                 
             }
 
@@ -90,7 +90,7 @@ namespace _2_D_arrays
 
         } //end of method
 
-        public void searchelement(int[,] a, int[,] b, int rowa, int colmna, int rowb, int colmnb,int flaga,int flagb)
+        public void searchelement(float[,] a, float[,] b, int rowa, int colmna, int rowb, int colmnb, float flaga, float flagb)
         { l1:
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("=====================SEARCH AN ELEMENT IN MATRIX=====================");
@@ -218,7 +218,7 @@ namespace _2_D_arrays
 
         }
 
-        public void searchingelementmethod(int[,]a,int row,int col,int flag)
+        public void searchingelementmethod(float[,] a, int row, int col, float flag)
         {
             if (flag == 0)
             {
@@ -260,7 +260,7 @@ namespace _2_D_arrays
         }
 
 
-        public void searchbyindex(int[,]a,int row,int col,int flaga)
+        public void searchbyindex(float[,] a, int row, int col, float flaga)
         {
 
             if (flaga== 0)
@@ -276,7 +276,7 @@ namespace _2_D_arrays
                 int ri = int.Parse(Console.ReadLine());
                 Console.Write("\nenter the column#:");
                 int ci = int.Parse(Console.ReadLine());
-                int temp = -3232323;
+                float temp = -3232323;
                 for (int i = 1; i <= row; i++)
                 {
                     for (int j = 1; j <= col; j++)
@@ -314,7 +314,7 @@ namespace _2_D_arrays
             return sortoption;
         }//end of method.....
 
-        public void showslicesfromgrid(int[,]a,int[,]b,int ra,int ca,int rb,int cb)
+        public void showslicesfromgrid(float[,] a, float[,] b, int ra, int ca, int rb, int cb)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("=======================SHOWING  SLICES FROM GRID=======================");

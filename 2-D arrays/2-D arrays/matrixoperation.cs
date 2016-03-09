@@ -8,22 +8,22 @@ namespace _2_D_arrays
 {
     class matrixoperation
     {
-        public int[,] createarray(int[,]a,int rows,int columns)
+        public float[,] createarray(float[,] a, int rows, int columns)
         {
             for (int i = 1; i <= rows; i++)
             {
                 for (int j = 1; j <= columns; j++)
                 {
                     Console.Write("\nEnter the value at index A[{0},{1}] :", i, j);
-                    a[i, j] = int.Parse(Console.ReadLine());
+                    a[i, j] = float.Parse(Console.ReadLine());
                 }
                 Console.WriteLine();
             }
 
             return a;
         } //end of method......
-    
-        public void ismatrixsquare(int[,]a,int rows,int columns,char m)
+
+        public void ismatrixsquare(float[,] a, int rows, int columns, char m)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             if (rows==columns)
@@ -62,7 +62,7 @@ namespace _2_D_arrays
             
         }
 
-        public void display(int[,]a,int rows,int columns,char m)
+        public void display(float[,] a, int rows, int columns, char m)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
 
@@ -81,9 +81,9 @@ namespace _2_D_arrays
             }
 
         }
-        
 
-        public void replaceelement(int[,]a,int row,int col)
+
+        public void replaceelement(float[,] a, int row, int col)
         {
             l1:
             Console.Write("\nEnter the row number :");
@@ -109,7 +109,7 @@ namespace _2_D_arrays
 
         }
 
-        public void replacementbyanelement(int[,] a, int row, int col)
+        public void replacementbyanelement(float[,] a, int row, int col)
         {
             Console.Write("\nEnter the element that you want to Replace: ");
             int rep = int.Parse(Console.ReadLine());

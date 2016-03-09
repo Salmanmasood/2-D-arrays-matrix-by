@@ -8,18 +8,18 @@ namespace _2_D_arrays
 {
     class class2
     {
-        public void adddisplay(int[,] a, int[,] b, int[,] c, int ra, int ca, int rb, int cb)
+        public void adddisplay(float[,] a, float[,] b, float[,] c, int ra, int ca, int rb, int cb)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("============================Adding MATRIces============================");
+            Console.WriteLine("============================ADDING MATRICES============================");
             Console.ForegroundColor = ConsoleColor.White;
             class2 ob = new class2();
            bool x= ob.cmpforadd(ra, ca, rb, cb);
            if (x==true)
            {
-               for (int i = 1; i < ra; i++)
+               for (int i = 1; i <= ra; i++)
                {
-                   for (int j =1 ; j < ca; j++)
+                   for (int j =1 ; j <= ca; j++)
                    {
                        c[i, j] = a[i, j] + b[i, j];
                        
@@ -66,18 +66,18 @@ namespace _2_D_arrays
 
         }
 
-        public void subdisplay(int[,] a, int[,] b, int[,] c, int ra, int ca, int rb, int cb)
+        public void subdisplay(float[,] a, float[,] b, float[,] c, int ra, int ca, int rb, int cb)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("============================Adding MATRIces============================");
+            Console.WriteLine("============================SUBTRACTING MATRICES============================");
             Console.ForegroundColor = ConsoleColor.White;
             class2 ob = new class2();
             bool x = ob.cmpforadd(ra, ca, rb, cb);
             if (x == true)
             {
-                for (int i = 1; i < ra; i++)
+                for (int i = 1; i <= ra; i++)
                 {
-                    for (int j = 1; j < ca; j++)
+                    for (int j = 1; j <= ca; j++)
                     {
                         c[i, j] = a[i, j] - b[i, j];
 
@@ -149,7 +149,7 @@ namespace _2_D_arrays
 
         }
 
-        public void multiplymat(int[,]a,int[,]b,int[,]c,int ra,int ca,int rb,int cb)
+        public void multiplymat(float[,] a, float[,] b, float[,] c, int ra, int ca, int rb, int cb)
         {
             class2 v2 = new class2();
          bool x=   v2.cmpformul(ra, ca, rb, cb);
@@ -175,41 +175,9 @@ namespace _2_D_arrays
         } //end of method....
 
 
-        public void determinant(float[,]a,int r,int c)
-        {
-            float temp = 0;
-            //method of determinant
-            for (int i = 1; i <= r; i++)
-            {
-                a[1, i] = a[1, i] / a[1, 1]; //making 1st a[1,1] =1 dividing the 1st row by a[1,1] 
-            }
-            //reduction started
-            for (int i = 2; i <= r; i++)
-            {
-                temp = a[1, i];
-                for (int j = 1; j <= c; j++)
-                {
 
 
-
-                    if (a[1, i] < 0)
-                    {
-                        a[1, i] = a[1, i] * (-1);
-
-                    }
-
-
-
-                    a[j, i] = (a[j, i] - (a[j, 1] * temp));
-
-
-                }
-            }
-
-        }
-
-
-        public void displayrowslice(int[,]a,int r,int c)
+        public void displayrowslice(float[,]a,int r,int c)
         {
             Console.Write("Enter the row # that you want to see: ");
             int ri = int.Parse(Console.ReadLine());
@@ -231,7 +199,7 @@ namespace _2_D_arrays
 
 
         } //end of method.....
-        public void diplaycolumnslice(int[,] a, int r, int c)
+        public void diplaycolumnslice(float[,] a, int r, int c)
         {
             Console.Write("Enter the column # that you want to see: ");
             int ri = int.Parse(Console.ReadLine());
@@ -251,11 +219,100 @@ namespace _2_D_arrays
 
             }
 
+        } //end of method.....
+
+
+        public float determinant(float[,] a, int rowa, int colmuna)
+        {
+            int counter = 0;
+            int n = rowa;
+            float temp = 0;
+            float det = 0;
+            int p = 2, q = 1, r = 1, x = 1;
+        l1:
+            for (int k = r; k <= rowa; k++)
+            {
+                a[x, k] = a[x, k] / a[x, x];
+
+            }
+            for (int i = p; i <= rowa; i++)
+            {
+                counter++;
+                temp = a[x, p];
+                if (temp < 0)
+                {
+                    temp = temp * (-1);
+                }
+
+                for (int j = q; j <= colmuna; j++)
+                {
+                    a[j, i] = a[j, i] - (a[j, x] * temp);
+                }
+                p++;
+            }
+            for (int i = 1; i < counter; i++)
+            {
+                p--;
+            }
+            if (n > 3)
+            {
+                p++; q++; r++; x++;
+                n--;
+                goto l1;
+            }
+            //    Program.display(a, rowa, colmuna);
+
+            det = (a[rowa - 1, colmuna - 1] * a[rowa, colmuna]) - (a[rowa - 1, colmuna] * a[rowa, colmuna - 1]);
+
+            return det;
+
+        } //end of method.....
+
+        public int determinantoption()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("============================DETERMINANT OF A MATRIX============================");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n1-Determinant of MATRIX A:");
+            Console.WriteLine("\n2-Determinant of MATRIX B:");
+            Console.Write("\nSelect a Number to Create the respective MATRIX: ");
+            int arrayselection = int.Parse(Console.ReadLine());
+
+
+            return arrayselection;
+
         }
 
 
+        public int transposedisplay()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("============================TRANSPOSE OF A MATRIX============================");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n1-Transpose of MATRIX A:");
+            Console.WriteLine("\n2-Transpose of MATRIX B:");
+            Console.Write("\nSelect a Number to Create the respective MATRIX: ");
+            int arrayselection = int.Parse(Console.ReadLine());
 
 
+            return arrayselection;
+
+        }
+        public static void transpose(float[,] a, int r, int c)
+        {
+            for (int i = 1; i <= r; i++)
+            {
+                for (int j = 1; j <= c; j++)
+                {
+                    Console.Write(a[j, i] + "\t");
+                }
+                Console.WriteLine();
+            }
+
+
+        }
 
     }
 }

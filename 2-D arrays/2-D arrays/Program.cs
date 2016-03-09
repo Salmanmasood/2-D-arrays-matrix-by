@@ -8,12 +8,21 @@ namespace _2_D_arrays
 {
     class Program
     {
-        public static int[,] a = new int[100,100];
-        public static int[,] b = new int[100, 100];
-        public static int[,] c = new int[200, 200];
+        public static float[,] a = new float[100, 100];
+        public static float[,] b = new float[100, 100];
+        public static float[,] c = new float[200, 200];
 
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("================================GRAND ASSGINMENT# 2==============================");
+            Console.WriteLine("ALGORITHM AND CODING BY: \t SALMAN MASOOD ");
+            Console.WriteLine("\nDOCUMENTATION AND TESTING BY: \t DAWAR ASHFAQ ");
+            Console.WriteLine("\nCOLLABORATOR: SANA RAO");
+            Console.WriteLine("\nSUBMITTED TO : DR.JAMAL HUSSAIN");
+            Console.WriteLine("\npress any key to continue the program.....");
+            Console.ReadKey();
+            Console.Clear();
             int flaga = 0, flagb = 0, rowa = 0, rowb = 0, columa = 0, columb = 0;
             int maininput;
             char selectionofmatrix = 'A';
@@ -67,7 +76,7 @@ namespace _2_D_arrays
                             else
                             {
                                 Console.ForegroundColor = ConsoleColor.Magenta;
-                                Console.WriteLine("============================CREATING AN MATRIX A============================");
+                                Console.WriteLine("============================CREATING AN MATRIX B============================");
                                 Console.ForegroundColor = ConsoleColor.White;
                                 Console.Write("Enter the no. of Rows: ");
                                 rowb = int.Parse(Console.ReadLine());
@@ -274,9 +283,49 @@ namespace _2_D_arrays
                        break;
                     case 6:
                        try
+
                        {
+                           class2 c6 = new class2();
+                         int x= c6.determinantoption();
+                         if (x==1)
+                         {
+                             if (a[0,0]==1)
+                             {
+                                 if (rowa==columa)
+                                 {
+                                   float  y= Program.determinant(a, rowa, columa);
+                                   Console.WriteLine("Determinant is : "+y);
+                                 }
+                                 else
+                                 {
+                                     Console.WriteLine("the matrices is not an square matrices....");
+                                 }
 
+                             }
+   
+                         }
+                         else if (x==2)
+                         {
+                             if (b[0, 0] == 1)
+                             {
+                                 if (rowb == columb)
+                                 {
+                                     float y = Program.determinant(b, rowb, columb);
+                                     Console.WriteLine("Determinant is : " + y);
+                                 }
+                                 else
+                                 {
+                                     Console.WriteLine("the matrices is not an square matrices....");
+                                 }
 
+                             }
+                             
+                         }
+                         else
+                         {
+                             mainclass ob2 = new mainclass();
+                             ob2.invalidinput();
+                         }
 
 
 
@@ -300,6 +349,57 @@ namespace _2_D_arrays
                        mainclass c7 = new mainclass();
                        c7.showslicesfromgrid(a, b, rowa, columa, rowb, columb);
                        break;
+
+                    case 8:
+                       class2 c8 = new class2();
+                       try
+                       {
+                           int c8i = c8.transposedisplay();
+                           if (c8i==1)
+                           {
+                               if (a[0,0]==1)
+                               {
+                                   class2.transpose(a, rowa, columa);
+                               }
+                               else
+                               {
+                                   Console.ForegroundColor = ConsoleColor.Red;
+                                   Console.WriteLine("you have not Created matrix A!!!!");
+                                   Console.ForegroundColor = ConsoleColor.White;
+                               }
+
+                           }
+
+                           else if (c8i==2)
+                           {
+                               if (b[0, 0] == 1)
+                               {
+                                   class2.transpose(b, rowb, columb);
+                               }
+                               else
+                               {
+                                   Console.ForegroundColor = ConsoleColor.Red;
+                                   Console.WriteLine("you have not Created matrix B!!!!");
+                                   Console.ForegroundColor = ConsoleColor.White;
+                               } 
+                           }
+                           else
+                           {
+                               mainclass c5e = new mainclass();
+                               c5e.invalidinput();
+                               goto main;
+                           }
+
+
+                       }
+                       catch (Exception)
+                       {
+                           mainclass c5e = new mainclass();
+                           c5e.invalidinput();
+                           goto main;
+                       }
+                       break;
+
                     case 9:
 
                        try
@@ -324,7 +424,7 @@ namespace _2_D_arrays
                        try
                        {
                            class2 c10 = new class2();
-                           c10.adddisplay(a, b, c, rowa, columa, rowb, columb);
+                           c10.subdisplay(a, b, c, rowa, columa, rowb, columb);
 
                        }
 
@@ -378,22 +478,52 @@ namespace _2_D_arrays
             
             
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-
         }
+        public static float determinant(float[,] a, int rowa, int colmuna)
+        {
+            int counter = 0;
+            int n = rowa;
+            float temp = 0;
+            float det = 0;
+            int p = 2, q = 1, r = 1, x = 1;
+        l1:
+            for (int k = r; k <= rowa; k++)
+            {
+                a[x, k] = a[x, k] / a[x, x];
+
+            }
+            for (int i = p; i <= rowa; i++)
+            {
+                counter++;
+                temp = a[x, p];
+                if (temp < 0)
+                {
+                    temp = temp * (-1);
+                }
+
+                for (int j = q; j <= colmuna; j++)
+                {
+                    a[j, i] = a[j, i] - (a[j, x] * temp);
+                }
+                p++;
+            }
+            for (int i = 1; i < counter; i++)
+            {
+                p--;
+            }
+            if (n > 3)
+            {
+                p++; q++; r++; x++;
+                n--;
+                goto l1;
+            }
+            //    Program.display(a, rowa, colmuna);
+
+            det = (a[rowa - 1, colmuna - 1] * a[rowa, colmuna]) - (a[rowa - 1, colmuna] * a[rowa, colmuna - 1]);
+
+            return det;
+
+        } //end of method.....
+
     }
 }
